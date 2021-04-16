@@ -18,8 +18,7 @@ Webapp for visualizing availability and associated information [Weather, Tempera
  - Web scraper for collecting data from JCDecaux API for dublin bike and openweathermap API for dublin weather.  
 
 
-# Front End of this project can be found at:
- - **https://github.com/omijoshi09/flask_app**
+# Front End of this project can be found in flask app master folder
 
 This project repository is for course COMP30830 Software Engineering (Conv) offered at University College Dublin for EY 2020 trimester 2. It is strictly eduactional and private till end of trimester in May 2020.  
 
