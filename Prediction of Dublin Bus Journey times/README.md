@@ -1,1 +1,3 @@
-Project Description
+#Project Description
+
+Dublin Bus operates bus service in Dublin city along with surrounding counties of Meath, Wicklow, and Kildare. Huge passenger bases of such systems are interested in knowing accurate bus schedules as well as projected journey times of later days. This project report discusses the approach behind the development of a “Dublin Bus web application” addressing these issues. It also describes a methodology used to deliver an intuitive map-based application, which provides accurate predictions for bus arrival and total journey times. Unification of complementary features like leap card balance, cost of the journey, and weather at the time of the journey is an added advantage for users of the application.
