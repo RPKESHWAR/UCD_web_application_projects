@@ -1,0 +1,397 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="How does it work? The bike sharing scheme for dublin city people.Check all stations">
+    <meta name="keywords" content="Bikes, bicycle, travel, dublin city">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--    <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+    <!--    <script src="https://kit.fontawesome.com/4a1d7649ab.js" ></script>-->
+    <title>Dublin Bikes</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="icon" href="../static/asset/icon/favicon.ico" type="image/gif" sizes="16x16">
+
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/map.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/chart.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/weather.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/error_toaster.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163882641-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163882641-1');
+    </script>
+
+</head>
+
+<body>
+
+<!--This section contains navigation bar and weather card-->
+<header class="header">
+
+    <!--    Weather card space-->
+    <div id="weather_deatils" class="header__logo-box">
+        <div class="background">
+            <div class="Circle1"></div>
+            <div class="Circle2"></div>
+            <div class="Circle3"></div>
+            <div class="content">
+                <!--                Sunny Weather-->
+                <h1 id="is_sun" class="Condition footer_value"><i class="fa fa-sun-o"></i></h1>
+                <!--                Moon Weather-->
+                <h1 id="is_moon" class="Condition footer_value"><i class="fa fa-moon-o"></i></h1>
+
+                <!--                Rain Weather-->
+                <h1 id="is_rain" class="Condition footer_value"><i class="fas fa-cloud-rain"></i></h1>
+
+                <!--                Thunderstorm Weather-->
+                <h1 id="is_thunder" class="Condition footer_value"><i class="fa fa-thunderstorm-o"></i></h1>
+
+                <!--                Thunderstorm Weather-->
+                <h1 id="is_cloud" class="Condition footer_value"><i class="fa fa-cloud"></i></h1>
+
+                <h1 id="main_temp" class="Temp footer_value">10<span id="C">&#8457;</span></h1>
+                <h1 id="weather_current_time" class="Time footer_value current_time">09:35</h1>
+                <h1 class="Location footer_value"><i class="fa fa-map-marker">place</i> Dublin, IRE</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <nav style="margin-left: 20px">
+        <ul class="main-nav">
+            <li><a href="#our_stations">Bike Stations</a></li>
+            <li><a href="#book_bike">Book Your Bike</a></li>
+            <li style="margin-right: 50px"><a href="#about_us">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Dublin Bikes</span>
+            <span class="heading-primary--sub">just click away</span>
+        </h1>
+    </div>
+
+</header>
+
+<!--Loader-->
+
+<div id="our_stations" class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+        Our Stations
+    </h2>
+    <div id="station_div" class="text-center">
+        <div class="main_load">
+            <div class="loaderBalls">
+                <div class="loaderBalls__item"></div>
+                <div class="loaderBalls__item"></div>
+                <div class="loaderBalls__item"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--This section contains Map , Station history and book a bike -->
+<div id="main_content">
+    <div id="map"></div>
+
+    <!--    loader screen-->
+    <div style="margin-top: 60px" class="u-center-text u-margin-bottom-big">
+        <div id="station_history_check" class="text-center">
+            <div class="main_load">
+                <div class="loaderBalls">
+                    <div class="loaderBalls__item"></div>
+                    <div class="loaderBalls__item"></div>
+                    <div class="loaderBalls__item"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Station History-->
+
+    <div class="station_history" id="all_history" style="display: none">
+        <div style="margin-top: 40px" class="u-center-text u-margin-bottom-big">
+            <h2 id="weekly_bike_val" class="heading-third">
+                Weekly History at:
+            </h2>
+        </div>
+
+        <!--Get chart: Available bikes-->
+        <div id="chart_bike_history" class="chart_val"></div>
+
+        <!--  2)   24 hour available bike-->
+        <h2 id="daily_bike_val_avl" class="heading-third">
+            Last 24 hour available bike at:
+        </h2>
+
+        <!--Get chart: Available bikes for 24 hours-->
+        <div id="chart_bike_history_avl_daily" class="chart_val"></div>
+
+
+        <!-- 3)   Weekly stand value -->
+        <h2 id="weekly_bike_stand" class="heading-third">
+            Last 24 hour History at:
+        </h2>
+
+        <!--Get chart: Available Stand for week-->
+        <div id="chart_bike_history_stands" class="chart_val"></div>
+
+
+        <!-- 4)   24 hour available Stand-->
+        <h2 id="daily_bike_val_stand" class="heading-third">
+            Last 24 hour History at:
+        </h2>
+
+        <!--Get chart: Available bikes for 24 hours-->
+        <div id="chart_bike_history_stand_daily" class="chart_val"></div>
+    </div>
+
+    <div id="book_bike" class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">
+            Book a bike
+        </h2>
+    </div>
+
+
+    <!--Select station-->
+    <div id="main_search_block">
+        <div id="first_dropdown" class="dropdown">
+            <div class="select">
+                <span id="source_station" class="heading-third">Departure</span>
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden" name="source">
+            <ul id="station_depart" class="dropdown-menu"></ul>
+        </div>
+
+        <div>
+            <div  class="time-picker">
+                <div class="tp-col tp-hr">
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089643.svg"  class="tp-up-arrow"/>
+                    <span class="noselect" tabindex="0*">00</span>
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089636.svg" class="tp-down-arrow"/>
+                </div>
+                <div class="tp-col">
+                    <span>:</span>
+                </div>
+                <div class="tp-col tp-min">
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089643.svg"  class="tp-up-arrow"/>
+                    <span tabindex="0">00</span>
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089636.svg" class="tp-down-arrow"/>
+                </div>
+                <div class="tp-col">
+                    <span class="heading-third tp-am-pm" style="font-size: 15px">AM</span>
+                </div>
+            </div>
+        </div>
+
+        <!--        <h1 id="horizontal_dash">&#45;&#45;</h1>-->
+
+        <div id="second_dropdown" class="dropdown">
+            <div class="select">
+                <span id="destination_station" class="heading-third">Going To</span>
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden" name="gender">
+            <ul id="station_received" class="dropdown-menu"></ul>
+            <span class="msg"></span>
+        </div>
+
+        <div>
+            <div  class="time-picker">
+                <div class="tp-col tp-hr-destination">
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089643.svg"  class="tp-up-arrow-destination"/>
+                    <span class="noselect" tabindex="0*">00</span>
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089636.svg" class="tp-down-arrow-destination"/>
+                </div>
+                <div class="tp-col">
+                    <span>:</span>
+                </div>
+                <div class="tp-col tp-min-destination">
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089643.svg"  class="tp-up-arrow-destination"/>
+                    <span tabindex="0">00</span>
+                    <img src="https://image.flaticon.com/icons/svg/2089/2089636.svg" class="tp-down-arrow-destination"/>
+                </div>
+                <div class="tp-col">
+                    <span class="heading-third tp-am-pm-destination" style="font-size: 15px">AM</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="search_btn" onclick="get_search_result()">Search</button>
+
+    </div>
+
+    <!--    Error Toaster-->
+    <div id="toaster_block_search_result">
+        <div class="toast__container">
+            <div class="toast__cell">
+                <div class="toast toast--yellow add-margin">
+                    <div class="toast__icon">
+                        <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 301.691 301.691" style="enable-background:new 0 0 301.691 301.691;" xml:space="preserve">
+                        <g>
+	<polygon points="119.151,0 129.6,218.406 172.06,218.406 182.54,0  "></polygon>
+                            <rect x="130.563" y="261.168" width="40.525" height="40.523"></rect>
+</g>
+                    </svg>
+                    </div>
+                    <div class="toast__content">
+                        <p class="toast__type">Error</p>
+                        <p id="toast_search_error" class="toast__message">Please try again.</p>
+                    </div>
+                    <div class="toast__close">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642">
+                            <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061  c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061  l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541  l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    Loader screen-->
+    <div class="u-center-text u-margin-bottom-big">
+        <div id="book_bike_result" class="text-center">
+            <div class="main_load">
+                <div class="loaderBalls">
+                    <div class="loaderBalls__item"></div>
+                    <div class="loaderBalls__item"></div>
+                    <div class="loaderBalls__item"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--Search Result-->
+    <div id="search_result">
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                Search Result
+            </h2>
+        </div>
+        <h2 id="avl_bike_search" class="heading-third"></h2>
+        <h2 id="avl_bike_weather_search" class="heading-third"></h2>
+        <h2 id="avl_bike_stand_search" class="heading-third"></h2>
+        <h2 id="avl_bike_stand_weather_search" class="heading-third"></h2>
+        <a href="#map" style="color: #00BFFF"  class="heading-third">Get Directions <i class="fas fa-directions"></i></a>
+    </div>
+
+
+
+    <!--Bike chart information-->
+    <div class="show_chart">
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                Plan your journey
+            </h2>
+        </div>
+
+        <div>
+            <div>
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 id="heading-bikes_avl" class="heading-third">
+                        Available Bikes
+                    </h2>
+                </div>
+
+                <!--Get chart: Available bikes-->
+                <div id="chart_bike" class="chart_val"></div>
+
+                <div id="avl_weather_wrap" class="weather-wrapper"></div>
+
+            </div>
+
+            <div>
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 id="heading-bikes_stand" class="heading-third">
+                        Available Bike Stand
+                    </h2>
+                </div>
+
+                <!--Get chart: Available bikes-->
+                <div id="chart_stand" class="chart_val"></div>
+
+                <!--            Destination weather-->
+                <div id="destination_weather_wrap" class="weather-wrapper"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--About us section-->
+
+<div id="about_us" class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+        About Us
+    </h2>
+</div>
+
+<div class="u-center-text u-margin-bottom-big">
+    <h4 style="color: darkgrey; text-align: center; margin: 20px" class="heading-third">
+        DUBLIN BIKES ALLOWS THE USERS TO CUSTOMIZE THEIR JOURNEY FROM ORIGIN STATION TILL THE DESTINATION. WE ARE OPEN FOR BOOKINGS ON A DAILY BASIS. THIS APPLICATION INFORMS THE USERS ABOUT THE CURRENT OCCUPANCY OF DUBLIN BIKE STATIONS AND LOCATIONS AND AVAILABILITY OF THE DROP OFF POINT STANDS, WHICH ACTS AS A HELPING HAND IN THEIR TRAVEL PLAN. ALSO, OUR MACHINE LEARNING ALGORITHM HELPS THE USER TO ALTER THEIR JOURNEY AND KNOW THE AVAILABILITY IN NEAR FUTURE. THE APPLICATION ALSO HELPS USER WITH WEATHER PREDICTIONS. WE HAVE AN ADDITIONAL FEATURE WHEREIN BY CLICKING ON THE MARKER YOU WILL GET TO KNOW EACH STATIONS HISTORY IN TERMS OF AVAILABLE BIKES AND STATIONS WITH WEEKLY AND HOURLY DATA. THIS WEBSITE IS PLANNED, DESIGNED AND DEVELOPED BY OMKAR JOSHI, RASIK KANE AND RATNAPRABHA KESHWAR.
+    </h4>
+</div>
+
+<!--Footer -->
+<footer class="footer-distributed">
+
+    <div class="footer-right">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+
+    </div>
+
+    <div class="footer-left">
+
+        <p class="footer-links">
+            <a class="footer_value" href="#">Company</a>
+
+            <a class="footer_value" href="#">ContactUS</a>
+
+            <a class="footer_value" href="#">Carrers</a>
+
+            <a class="footer_value" href="#">Terms</a>
+
+            <a class="footer_value" href="#">PricacyPolicy</a>
+
+        </p>
+
+        <p style="text-align: center; margin-top: 40px">Copyright &copy; 2020 by Software group-11. All rights reserved</p>
+    </div>
+
+</footer>
+
+
+<script src="../static/js/app.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv4Jkj6OMUVN0swxdIzZMOYu1vaddkooY&callback=initMap">
+</script>
+</body>
+</html>

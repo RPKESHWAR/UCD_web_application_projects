@@ -1,0 +1,413 @@
+html{scroll-behavior:smooth}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777; }
+
+.header {
+    height: 85vh;
+    background-image:  url(../asset/dublin_bike-2.png);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+.header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    overflow: hidden;
+    z-index: 10;
+    /*position: relative;*/
+    margin: -30px auto;
+    height: 90px;
+    width: 300px;
+    background-color: #6fd57a;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+
+}
+.header__logo {
+    height: 35px; }
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+.heading-primary--main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+.heading-primary--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.5px;
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s; }
+.heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+
+.heading-third {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .1rem;
+    text-align: center;
+    transition: all .2s; }
+.heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+
+.u-center-text {
+    text-align: center !important; }
+
+
+.u-margin-bottom-big {
+    margin-bottom: 3rem !important; }
+
+
+/*select station css*/
+
+span.msg,
+span.choose {
+    color: #555;
+    padding: 5px 0 10px;
+    display: inherit
+}
+.container {
+    width: 500px;
+    margin: 50px auto 0;
+    text-align: center
+}
+
+/*Styling Selectbox*/
+.dropdown {
+    width: 250px;
+    height: 65px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 14px;
+    color: #474747;
+    text-align: left;
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px
+}
+.dropdown .select > i {
+    font-size: 15px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    margin-top: -25px;
+
+}
+.dropdown:hover {
+    box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+.dropdown:active {
+    background-color: #f8f8f8
+}
+.dropdown.active:hover,
+.dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 5px 5px 0 0;
+    background-color: #f8f8f8
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0 1px 5px 5px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.dropdown .dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+.dropdown .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+.dropdown .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+
+
+.select_second{
+    margin-left: -100px;
+}
+
+
+/*Time css*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+.time-picker {
+    display:flex;
+    align-items:center;
+    margin:0 auto;
+    width:150px;
+    justify-content:space-evenly;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+.tp-col {
+    display:flex;
+    flex-direction:column;
+    align-items: inherit;
+}
+.tp-hr>span,.tp-min>span {
+    border:1px solid #ccc;
+    padding:4px 4px ;
+    border-radius:4px;
+    width:30px;
+    text-align:center;
+    font-size:15px;
+}
+.tp-up-arrow,.tp-down-arrow {
+    cursor:pointer;
+    width:15px;
+    height:15px;
+}
+.tp-am-pm {
+    cursor:pointer;
+    display:block;
+    padding:1px 3px;
+    border-radius:5px;
+}
+
+
+/*Destination*/
+
+.tp-hr-destination>span,.tp-min-destination>span {
+    border:1px solid #ccc;
+    padding:4px 4px ;
+    border-radius:4px;
+    width:30px;
+    text-align:center;
+    font-size:15px;
+}
+.tp-up-arrow-destination,.tp-down-arrow-destination {
+    cursor:pointer;
+    width:15px;
+    height:15px;
+}
+.tp-am-pm-destination {
+    cursor:pointer;
+    display:block;
+    padding:1px 3px;
+    border-radius:5px;
+}
+
+
+/*button*/
+
+.search_btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 25px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.show_chart{
+    display: none;
+}
+
+#search_result{
+    display: none;
+}
+
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); }
+    80% {
+        transform: translateX(10px); }
+    100% {
+        opacity: 1;
+        transform: translate(0); }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem); }
+    80% {
+        transform: translateX(-1rem); }
+    100% {
+        opacity: 1;
+        transform: translate(0); } }
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem); }
+    100% {
+        opacity: 1;
+        transform: translate(0); } }
+
+
+
+
+.get_history {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.get_history:hover {
+    cursor: pointer;
+}
+
+#main_search_block{
+    display: flex;
+    margin-left: 225px;
+    margin-bottom: 50px;
+}
+
+
+.container{ position: relative }
+.element{ width: 50%; float: left }
+
+
+/*Loading effects*/
+
+#main_content{
+    display: none;
+}
+
+#horizontal_dash{
+    padding-left: 30px;
+    margin-top: 5px
+}
+
+#second_dropdown{
+    margin-left: 40px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #weather_deatils {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+
+    nav {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+
+
+    #main_search_block {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    #first_dropdown{
+        left: 50px;
+    }
+
+    .time-picker{
+        margin-top: 20px;
+    }
+
+    #horizontal_dash{
+        padding-left: 170px;
+    }
+
+    #second_dropdown{
+        margin-left: 50px;
+        margin-top: 25px;
+
+    }
+
+    .search_btn{
+        margin-top: 20px;
+    }
+
+}

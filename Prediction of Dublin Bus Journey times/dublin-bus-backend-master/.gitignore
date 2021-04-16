@@ -1,0 +1,11 @@
+/env/
+.DS_Store
+.idea/.gitignore
+.idea/backend.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+dublin_bus_backend/dublin_bus_backend/__pycache__/
+dublin_bus_backend/user_auth/__pycache__/
+dublin_bus_backend/debug.log

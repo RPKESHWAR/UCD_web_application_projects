@@ -1,0 +1,27 @@
+.homeBannerForAuthenticated {
+    width: 100%;
+    height: 125vh;
+    padding: 8px;
+    background-image: url("../images/home_banner.jpg");
+    background-size: cover;
+}
+
+.homeBannerForNotAuthenticated {
+    width: 100%;
+    height: 105vh;
+    padding: 8px;
+    background-image: url("../images/home_banner.jpg");
+    background-size: cover;
+}
+
+@media only screen and (max-width: 1450px) {
+    .homeBannerForAuthenticated {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .homeBannerForNotAuthenticated {
+        height: auto;
+    }
+}

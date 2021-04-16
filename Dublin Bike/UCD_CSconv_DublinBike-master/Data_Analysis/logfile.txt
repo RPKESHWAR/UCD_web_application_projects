@@ -1,0 +1,90 @@
+Error is name 'root' is not defined
+Error is 'NoneType' object has no attribute 'cursor'
+Error is name 'root' is not defined
+Error is 'NoneType' object has no attribute 'cursor'
+Error is name 'root' is not defined
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'MySQL_rk' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'MySQL_rk' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'MySQL_rk' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (2003, "Can't connect to MySQL server on 'DublinBike' ([Errno 11001] getaddrinfo failed)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Error is 'NoneType' object has no attribute 'cursor'
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROMdublin_bike_24-3.dublin_bike_staticdata' at line 1")
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROMdublin_bike_24-3.dublin_bike_dynamicdata' at line 1")
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROMdublin_bike_24-3.open_weather_dynamicdata' at line 1")
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-3.dublin_bike_staticdata' at line 1")
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-3.dublin_bike_dynamicdata' at line 1")
+Error is (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-3.open_weather_dynamicdata' at line 1")
+Error is a bytes-like object is required, not 'str'
+Error is a bytes-like object is required, not 'str'
+Error is a bytes-like object is required, not 'str'
+Error is name 'pandas' is not defined
+Error is name 'pandas' is not defined
+Error is name 'pandas' is not defined
